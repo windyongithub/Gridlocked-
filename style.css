@@ -1,0 +1,42 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the page takes up the full screen height */
+}
+
+nav {
+    background-color: #f4f4f4;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+}
+nav a:hover {
+    color: #0066cc;
+}
+
+main {
+    flex: 1; /* Pushes the footer to the bottom of the screen */
+    padding: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between; /* Pushes the left and right items apart */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.8em; /* Small text */
+}
