@@ -11,8 +11,12 @@ nav {
     background-color: #f4f4f4;
     padding: 15px 20px;
     border-bottom: 1px solid #ccc;
-    display: flexbox;
+    display: flex;
     align-items: center;
+}
+
+nav img {
+    padding-right: 15px;
 }
 
 nav a {
@@ -20,6 +24,8 @@ nav a {
     color: #333;
     margin-right: 20px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 h1 {
@@ -30,15 +36,72 @@ nav a:hover {
 }
 
 main {
-    flex: 1; /* Pushes the footer to the bottom of the screen */
+    flex: 1;
     padding: 20px;
 }
 
 footer {
     display: flex;
-    justify-content: space-between; /* Pushes the left and right items apart */
+    justify-content: space-between; 
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
-    font-size: 0.8em; /* Small text */
+    font-size: 0.8em; 
+}
+.column {
+  float:inline-start;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  padding: 5px;
+  margin: 8px;
+  border-radius: 2px;
+  border-color: #000;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
 }
