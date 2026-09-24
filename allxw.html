@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Puzzles</title>
+    <title>All Crosswords | Gridlocked!</title>
     <link rel="icon" href="biggridlogo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,15 +16,21 @@
     </nav>
  
     <main>
-        <h1>All Puzzles</h1>
+        <h1>All Crosswords</h1>
         <ul class="puzzle-list">
-            <? for (var i = 0; i < puzzles.length; i++) { ?>
-            <li>
-                <a href="<?= puzzles[i].url ?>"><?= puzzles[i].title ?></a>
-                &mdash; <?= puzzles[i].constructorName ?> &middot; <?= puzzles[i].dateDisplay ?>
-            </li>
-            <? } ?>
-        </ul>
+                        <li>
+                <a href="/puzzles/2000-01-04-test4.html">test4</a>
+                &mdash; david &middot; January 4, 2000            </li>
+                        <li>
+                <a href="/puzzles/2000-01-03-test3.html">test3</a>
+                &mdash; john &middot; January 3, 2000            </li>
+                        <li>
+                <a href="/puzzles/2000-01-02-test2.html">test2</a>
+                &mdash; abel &middot; January 2, 2000            </li>
+                        <li>
+                <a href="/puzzles/2000-01-01-test1.html">test1</a>
+                &mdash; mark &middot; January 1, 2000            </li>
+                    </ul>
     </main>
  
     <footer>
