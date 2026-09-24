@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3 | Gridlocked!</title>
+    <link rel="icon" href="../biggridlogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <img src="../biggridlogo.png">
+        <a href="../index.html">Home</a>
+        <a href="../allxw.html">All</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+    <main>
+        <div class="puzzle-header">
+            <h1>test3</h1>
+            <p class="puzzle-meta">By john &middot; January 3, 2000</p>
+        </div>
+
+        <div class="puzzle-notes" id="notes"></div>
+        <script type="text/markdown" id="notes-source">john here im cool gel man</script>
+
+        <div class="puzzle-embed">
+            <iframe title="Puzzmo Embed" src="https://www.puzzmo.com/_embed/latest.html?embedID=community%3Aa67k4y1ft0" width="100%" height="600px" frameborder="0" loading="lazy" allow="clipboard-write ; web-share"></iframe>        </div>
+    </main>
+
+    <footer>
+        <div>gridlockedcrosswords [at] gmail [dot] com</div>
+        <div>Gridlocked! </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <script>
+        var mdSource = document.getElementById('notes-source');
+        var notesEl = document.getElementById('notes');
+        if (mdSource && notesEl) {
+            notesEl.innerHTML = marked.parse(mdSource.textContent.trim());
+        }
+    </script>
+</body>
+</html>
