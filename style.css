@@ -143,6 +143,10 @@ main {
   max-width: 700px;
   margin: 0 auto;
 }
+ 
+body.puzzle-page main {
+  max-width: 1100px;
+}
 
 .puzzle-list li {
   padding: 12px 0;
