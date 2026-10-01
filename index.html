@@ -7,24 +7,100 @@
     <link rel="icon" href="biggridlogo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="puzzle-page">
     <nav>
-        <img src="biggridlogo.png">
-        <a href="index.html">Home</a>
-        <a href="allxw.html">All</a>
-        <a href="about.html">About</a>
+        <div class="nav-left">
+            <img src="biggridlogo.png">
+            <a href="index.html">Home</a>
+            <a href="allxw.html">All</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-right">
+            <a href="submissions.html">Submit</a>
+        </div>
     </nav>
 
-    <main class="puzzle-page">
-        <h1>today's crossword</h1>
-        <div class="puzzle-embed">
-        <iframe title="Puzzmo Embed" src="https://www.puzzmo.com/_embed/latest.html?embedID=gridlocked_gridlocked-daily&submissionID=cmtwfb80n3g2u1znwa57v760d%3APuzzleSubmission" width="100%" height="600px" frameborder="0" loading="lazy" allow="clipboard-write ; web-share"></iframe>
+    <div class="mailing-list-section">
+        <h2>Join the Mailing List</h2>
+        <p>Get notified the moment a new puzzle drops.</p>
+        <div class="mailing-list-form">
+            <input type="email" id="ml-email" placeholder="you@email.com" autocomplete="email">
+            <button type="button" id="ml-submit" class="button">Join</button>
+            <p id="ml-message"></p>
         </div>
-    </main>
+    </div>
+
+    <main>
+                <div class="puzzle-header">
+            <p class="latest-label">Latest Puzzle</p>
+            <h1>test4</h1>
+            <p class="puzzle-meta">By david &middot; January 4, 2000</p>
+        </div>
+
+        <div class="puzzle-notes" id="notes"></div>
+        <script type="text/markdown" id="notes-source">*wasgud* :)</script>
+
+        <div class="puzzle-embed">
+            <iframe title="Puzzmo Embed" src="https://www.puzzmo.com/_embed/latest.html?embedID=community%3Aa67k4y1ft0" width="100%" height="600px" frameborder="0" loading="lazy" allow="clipboard-write ; web-share"></iframe>        </div>
+            </main>
 
     <footer>
         <div>gridlockedcrosswords [at] gmail [dot] com</div>
         <div><i>Gridlocked!</i></div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <script>
+        var mdSource = document.getElementById('notes-source');
+        var notesEl = document.getElementById('notes');
+        if (mdSource && notesEl) {
+            notesEl.innerHTML = marked.parse(mdSource.textContent.trim());
+        }
+    </script>
+
+    <script>
+    (function () {
+        var WEB_APP_URL = 'PASTE_YOUR_WEB_APP_EXEC_URL_HERE';
+
+        var emailInput = document.getElementById('ml-email');
+        var submitBtn = document.getElementById('ml-submit');
+        var messageEl = document.getElementById('ml-message');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function showMessage(text, isError) {
+            messageEl.textContent = text;
+            messageEl.style.color = isError ? '#c0392b' : '#2e7d32';
+        }
+
+        submitBtn.addEventListener('click', function () {
+            var email = emailInput.value.trim();
+
+            if (!emailPattern.test(email)) {
+                showMessage('Please enter a valid email address.', true);
+                return;
+            }
+
+            submitBtn.disabled = true;
+            showMessage('Joining...', false);
+
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ email: email })
+            })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    showMessage(data.message, data.status !== 'success');
+                    if (data.status === 'success') emailInput.value = '';
+                })
+                .catch(function () {
+                    showMessage('Something went wrong. Please try again.', true);
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                });
+        });
+    })();
+    </script>
 </body>
 </html>
