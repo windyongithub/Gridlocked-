@@ -1,9 +1,10 @@
+/* style.css */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensures the page takes up the full screen height */
 }
 
 nav {
@@ -68,6 +69,7 @@ footer {
   margin: 8px;
   border-radius: 2px;
   border: 1px solid #000;
+  background-color: #e0e0e0;
 }
 
 .container p:last-child {
@@ -137,15 +139,21 @@ main {
   margin: 0 auto;
 }
 
+.puzzle-embed iframe {
+  width: 100% !important;
+  max-width: 100%;
+  border: none;
+}
+
+body.puzzle-page main {
+  max-width: 1100px;
+}
+
 .puzzle-list {
   list-style: none;
   padding: 0;
   max-width: 700px;
   margin: 0 auto;
-}
- 
-body.puzzle-page main {
-  max-width: 1100px;
 }
 
 .puzzle-list li {
