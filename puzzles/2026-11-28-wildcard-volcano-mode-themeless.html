@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>November 28, 2026 &middot; Wildcard: Volcano Mode!!! (Themeless)</title>
+    <link rel="icon" href="biggridlogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<base href="/">
+<body class="puzzle-page">
+    <nav>
+        <div class="nav-left">
+            <img src="biggridlogo.png">
+            <a href="index.html">Home</a>
+            <a href="allxw.html">All</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-right">
+            <a href="submissions.html">Submission</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="puzzle-header">
+            <h1>Wildcard: Volcano Mode!!! (Themeless)</h1>
+            <p class="puzzle-meta">By the &middot; November 28, 2026</p>
+        </div>
+
+        <div class="puzzle-notes" id="notes"></div>
+        <script type="text/markdown" id="notes-source">*Constructor's Note*: this puzzle was a LONG time coming. it's not a STRETCH to say that solving it might be a bit of a TALL order, but making a crossword like has always been a BIG dream of mine, so my hopes are HIGH for this puzzle to go DOWN in history.
+
+*We EXTEND our DEEPEST thanks to Frisco17 and Alex Jiang for test-solving*</script>
+
+        <div class="puzzle-embed">
+            <iframe title="Puzzmo Embed" src="https://www.puzzmo.com/_embed/latest.html?embedID=gridlocked-october-2026-daily&amp;submissionID=cmws3s1fl1mfn22lg1w7u4log%3APuzzleSubmission" width="100%" height="600px" frameborder="0" loading="lazy" allow="clipboard-write *; web-share *"></iframe>        </div>
+    </main>
+
+    <footer>
+        <div>gridlockedcrosswords [at] gmail [dot] com</div>
+        <div><i>Gridlocked!</i></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <script>
+        var mdSource = document.getElementById('notes-source');
+        var notesEl = document.getElementById('notes');
+        if (mdSource && notesEl) {
+            notesEl.innerHTML = marked.parse(mdSource.textContent.trim());
+        }
+    </script>
+</body>
+</html>
